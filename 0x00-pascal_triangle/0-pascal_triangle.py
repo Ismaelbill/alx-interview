@@ -4,9 +4,6 @@ pascal triangle
 """
 
 
-from math import factorial
-
-
 def pascal_triangle(n):
     """
     function returns list of lists of integers
