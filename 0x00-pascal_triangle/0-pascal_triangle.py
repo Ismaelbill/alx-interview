@@ -15,12 +15,11 @@ def pascal_triangle(n):
     """
     if n <= 0:
         return []
-    arr = []
-    nestArr = []
-    for i in range(n):
-        for j in range(i+1):
-            ncr = factorial(i) // (factorial(j) * factorial(i - j))
-            nestArr.append((ncr))
-        arr.append(nestArr)
-        nestArr = []
+    arr = [[1]]
+    for i in range(n - 1):
+        tmp = [0] + arr[-1] + [0]
+        row = []
+        for j in range(len(arr[-1]) + 1):
+            row.append(tmp[j] + tmp[j + 1])
+        arr.append(row)
     return arr
