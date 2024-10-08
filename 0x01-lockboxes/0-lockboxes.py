@@ -12,8 +12,7 @@ def canUnlockAll(boxes):
     for box in boxes:
         for subBox in box:
             if subBox < len(arr) and (subBox != boxes.index(box)):
-                if ('$' not in arr[subBox]):
-                    arr[subBox].append('$')
+                arr[subBox].append('$')
 
     for box in arr[1:]:
         if '$' not in box:
