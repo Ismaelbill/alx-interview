@@ -1,7 +1,12 @@
 #!/usr/bin/python3
+""" lockboxes """
 
 
 def canUnlockAll(boxes):
+    """
+    function canUnlockAll:
+        determines if all the boxes can be opened.
+    """
     arr = [subboxes[:] for subboxes in boxes]
 
     for box in boxes:
