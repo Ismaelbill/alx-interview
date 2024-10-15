@@ -12,7 +12,7 @@ def minOperations(n):
     if n == 2:
         return 2
     arr = []
-    for i in range(2, n):
+    for i in range(3, n):
         val = (n // i) + i
         arr.append(val)
     return min(arr)
