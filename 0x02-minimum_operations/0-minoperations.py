@@ -8,9 +8,8 @@ def minOperations(n):
     to result in exactly n H characters in the file."""
     if n <= 0:
         return 0
-    if n == 1:
-        return 1
-    elif n == 2:
+
+    if n == 2:
         return 2
     arr = []
     for i in range(2, n):
