@@ -22,7 +22,5 @@ def check(data):
             if i >= 0 and i <= 4:
                 num += '1'
             else:
-                num += '0'
-    if '0' in num:
-        return False
+                return False
     return True
