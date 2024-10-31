@@ -10,7 +10,6 @@ def validUTF8(data):
 
 def check(data):
     """ checks data if valid"""
-    num = ''
     i = 0
     for d in data:
         bnr = bin(d)[2:]
@@ -19,8 +18,6 @@ def check(data):
             i = 0
             while i < length and '0' != bnr[i]:
                 i += 1
-            if i >= 0 and i <= 4:
-                num += '1'
-            else:
+            if not (i >= 0 and i <= 4):
                 return False
     return True
