@@ -1,20 +1,22 @@
 #!/usr/bin/node
 
-const fetchPromise = fetch(
-  'https://swapi-api.alx-tools.com/api/films/' + process.argv[2]
+const request = require('request');
+
+request(
+  'https://swapi-api.alx-tools.com/api/films/' + process.argv[2],
+  function (error, response, body) {
+    if (error) console.error('error', error);
+    const characters = JSON.parse(body).characters;
+
+    func(characters, 0);
+  }
 );
 
-fetchPromise.then((res) => {
-  const jsonedResponse = res.json();
-  jsonedResponse
-    .then((data) => {
-      return data.characters;
-    })
-    .then(async (d) => {
-      for (let i = 0; i < d.length; i++) {
-        const character = await fetch(d[i]);
-        const jsonedChar = await character.json();
-        console.log(jsonedChar.name);
-      }
-    });
-});
+function func (characters, n) {
+  if (n === characters.length) return;
+  request(characters[n], function (err, res, body) {
+    if (err) console.error('error', err);
+    console.log(JSON.parse(body).name);
+    func(characters, n + 1);
+  });
+}
