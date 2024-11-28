@@ -20,4 +20,3 @@ def makeChange(coins, total):
         else:
             i += 1
     return score
-
