@@ -18,12 +18,12 @@ def isWinner(x, nums):
 
         ret = track(prime_nums, remaining_nums)
         if ret % 2 == 0:
-            players['Maria'] += 1
-        else:
             players['Ben'] += 1
+        else:
+            players["Maria"] += 1
         i += 1
         x -= 1
-    if players['Maria'] > players['Ben']:
+    if players['Maria'] < players['Ben']:
         return 'Ben'
     else:
         return 'Maria'
