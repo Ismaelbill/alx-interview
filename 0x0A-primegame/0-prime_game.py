@@ -25,8 +25,10 @@ def isWinner(x, nums):
         x -= 1
     if players['Maria'] < players['Ben']:
         return 'Ben'
-    else:
+    elif players['Maria'] > players['Ben']:
         return 'Maria'
+    else:
+        return None
 
 
 def track(pr, arr):
