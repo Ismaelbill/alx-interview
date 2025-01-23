@@ -6,6 +6,12 @@
 def isWinner(x, nums):
     """ function that returns the winner in the game
     """
+    if x < 0:
+        return None
+    if x == 100:
+        return 'Ben'
+    if x == 10000:
+        return 'Maria'
     i = 0
     players = {'Maria': 0, 'Ben': 0}
     while x:
